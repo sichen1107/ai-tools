@@ -88,15 +88,21 @@ export default function App() {
         <header className="hero">
           <div className="hero-badge">
             <Sparkles size={16} />
-            AI 工具导航平台
+            AI 免费工具包
           </div>
 
           <div className="hero-main">
             <div className="hero-left">
-              <h1 className="hero-title">选择你要使用的功能</h1>
+              <h1 className="hero-title">AI 工具箱</h1>
+
               <p className="hero-desc">
                 将多个已完成的工具统一收纳到一个专业入口中。后续你可以继续添加 AI 写作、
                 查重、润色、PPT 生成、PDF 翻译等功能，而不必改动原有项目。
+              </p>
+
+              <p className="hero-desc hero-desc--contact">
+                AI 免费工具包，后续将持续改进并添加各使用功能，如果有意见和建议请发邮件到：
+                <a href="mailto:261538640@qq.com">261538640@qq.com</a>
               </p>
 
               <div className="hero-tags">
@@ -132,7 +138,7 @@ export default function App() {
 
             <h2 className="tool-title">更多功能即将上线</h2>
             <p className="tool-desc">
-              你后续可以继续把新工具接入这里，例如 AI 查重、论文润色、参考文献生成、
+              后续将继续把新工具接入这里，例如 AI 查重、论文润色、参考文献生成、
               PPT 自动制作、PDF 翻译等。
             </p>
 

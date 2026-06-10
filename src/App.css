@@ -339,3 +339,16 @@ a {
     min-height: auto;
   }
 }
+.hero-desc--contact {
+  margin-top: 8px;
+}
+
+.hero-desc--contact a {
+  color: #2563eb;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-desc--contact a:hover {
+  text-decoration: underline;
+}
