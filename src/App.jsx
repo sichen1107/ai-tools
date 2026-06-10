@@ -95,11 +95,6 @@ export default function App() {
             <div className="hero-left">
               <h1 className="hero-title">AI 工具箱</h1>
 
-              <p className="hero-desc">
-                将多个已完成的工具统一收纳到一个专业入口中。后续你可以继续添加 AI 写作、
-                查重、润色、PPT 生成、PDF 翻译等功能，而不必改动原有项目。
-              </p>
-
               <p className="hero-desc hero-desc--contact">
                 AI 免费工具包，后续将持续改进并添加各使用功能，如果有意见和建议请发邮件到：
                 <a href="mailto:261538640@qq.com">261538640@qq.com</a>
