@@ -107,13 +107,6 @@ export default function App() {
               </div>
             </div>
 
-            <div className="hero-right">
-              <div className="hero-stat-card">
-                <div className="hero-stat-label">当前已接入</div>
-                <div className="hero-stat-value">2 个功能</div>
-                <div className="hero-stat-sub">可继续扩展更多模块</div>
-              </div>
-            </div>
           </div>
         </header>
 
