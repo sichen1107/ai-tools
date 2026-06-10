@@ -1,0 +1,162 @@
+import {
+  FileText,
+  Search,
+  Sparkles,
+  ArrowUpRight,
+  PlusCircle,
+  Wand2,
+  ShieldCheck,
+  BookOpen,
+  Download,
+} from "lucide-react";
+import "./App.css";
+
+const tools = [
+  {
+    title: "AI 文本排版导出 Word",
+    desc: "将 AI 生成内容一键整理为规范文档，支持公式渲染与 Word 原生 DOCX 导出。",
+    url: "https://ai2word.pages.dev",
+    badge: "AI2DOC",
+    icon: FileText,
+    color: "blue",
+    points: [
+      "智能清洗 AI 输出内容",
+      "支持公式与结构化排版",
+      "导出 Word 原生公式文档",
+    ],
+  },
+  {
+    title: "论文搜索下载工具",
+    desc: "快速检索论文、查找文献资源，支持标题搜索、DOI 查询与下载入口整合。",
+    url: "https://papersearch.streamlit.app/",
+    badge: "PAPER",
+    icon: Search,
+    color: "purple",
+    points: [
+      "支持论文标题与 DOI 检索",
+      "整合常见文献获取入口",
+      "便于科研资料快速收集",
+    ],
+  },
+];
+
+function ToolCard({ tool }) {
+  const Icon = tool.icon;
+
+  return (
+    <a
+      className={`tool-card tool-card--${tool.color}`}
+      href={tool.url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div className="tool-card__top">
+        <span className="tool-badge">{tool.badge}</span>
+        <span className="tool-link">
+          立即进入
+          <ArrowUpRight size={16} />
+        </span>
+      </div>
+
+      <div className="tool-icon-wrap">
+        <Icon size={28} />
+      </div>
+
+      <h2 className="tool-title">{tool.title}</h2>
+      <p className="tool-desc">{tool.desc}</p>
+
+      <div className="tool-points">
+        {tool.points.map((point) => (
+          <div key={point} className="tool-point">
+            <ShieldCheck size={16} />
+            <span>{point}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="tool-footer">
+        <span className="tool-open-btn">打开功能</span>
+      </div>
+    </a>
+  );
+}
+
+export default function App() {
+  return (
+    <div className="page">
+      <div className="page-shell">
+        <header className="hero">
+          <div className="hero-badge">
+            <Sparkles size={16} />
+            AI 工具导航平台
+          </div>
+
+          <div className="hero-main">
+            <div className="hero-left">
+              <h1 className="hero-title">选择你要使用的功能</h1>
+              <p className="hero-desc">
+                将多个已完成的工具统一收纳到一个专业入口中。后续你可以继续添加 AI 写作、
+                查重、润色、PPT 生成、PDF 翻译等功能，而不必改动原有项目。
+              </p>
+
+              <div className="hero-tags">
+                <span><Wand2 size={15} /> 工具集中管理</span>
+                <span><BookOpen size={15} /> 科研场景友好</span>
+                <span><Download size={15} /> 支持持续扩展</span>
+              </div>
+            </div>
+
+            <div className="hero-right">
+              <div className="hero-stat-card">
+                <div className="hero-stat-label">当前已接入</div>
+                <div className="hero-stat-value">2 个功能</div>
+                <div className="hero-stat-sub">可继续扩展更多模块</div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main className="tools-grid">
+          {tools.map((tool) => (
+            <ToolCard key={tool.title} tool={tool} />
+          ))}
+
+          <div className="tool-card tool-card--coming">
+            <div className="tool-card__top">
+              <span className="tool-badge tool-badge--ghost">COMING SOON</span>
+            </div>
+
+            <div className="tool-icon-wrap tool-icon-wrap--ghost">
+              <PlusCircle size={28} />
+            </div>
+
+            <h2 className="tool-title">更多功能即将上线</h2>
+            <p className="tool-desc">
+              你后续可以继续把新工具接入这里，例如 AI 查重、论文润色、参考文献生成、
+              PPT 自动制作、PDF 翻译等。
+            </p>
+
+            <div className="tool-points">
+              <div className="tool-point">
+                <ShieldCheck size={16} />
+                <span>统一入口，不破坏原项目</span>
+              </div>
+              <div className="tool-point">
+                <ShieldCheck size={16} />
+                <span>新增功能仅需增加一个卡片</span>
+              </div>
+              <div className="tool-point">
+                <ShieldCheck size={16} />
+                <span>便于后续部署成完整平台</span>
+              </div>
+            </div>
+
+            <div className="tool-footer">
+              <span className="tool-open-btn tool-open-btn--disabled">预留位置</span>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+}
